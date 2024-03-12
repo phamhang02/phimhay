@@ -48,19 +48,20 @@ const Header = (props) => {
 
     const checkLogin = useCallback(() => {
         personRef.current.classList.toggle("active");
+        console.log(personRef.current.classList)
     }, []);
 
-    useEffect(() => {
-        const close = (e) => {
-            if (e.target.className !== "header__person__info__name") {
-                personRef.current.classList.remove("active");
-            }
-        };
+    // useEffect(() => {
+    //     const close = (e) => {
+    //         if (e.target.className !== "header__person__info__name") {
+    //             personRef.current.classList.remove("active");
+    //         }
+    //     };
 
-        document.body.addEventListener("click", close);
+    //     document.body.addEventListener("click", close);
 
-        return () => document.body.removeEventListener("click", close);
-    }, []);
+    //     return () => document.body.removeEventListener("click", close);
+    // }, []);
 
     return (
         <div className="header">
